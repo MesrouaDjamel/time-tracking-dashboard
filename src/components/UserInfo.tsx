@@ -4,13 +4,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { IUser } from "../../type/type";
 
-const UserInfo = ({ user, getPeriod }: { user: IUser, getPeriod: (period: string) => void }) => {
+const user = {
+  image: "/image-jeremy.png",
+  name : "Jeremy Robson",
+}
+const UserInfo = ({getPeriod }: {getPeriod: (period: string) => void }) => {
    const [period, setPeriod] = useState("Weekly");
    const [isActiveWeekly, setIsActiveWeekly] = useState(true);
    const [isActiveDaily, setIsActiveDaily] = useState(false);
    const [isActiveMonthly, setIsActiveMonthly] = useState(false);
 
-   // console.log(period);
    const handleClick = (period: string) => {
      setPeriod(period);
      if (period === "Daily") {
